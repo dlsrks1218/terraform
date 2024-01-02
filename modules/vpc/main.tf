@@ -22,7 +22,7 @@ resource "aws_subnet" "public" {
 
   tags = merge(
     {
-      Name = "${var.prefix}-${var.env}-public-subnet-${substr("${var.availability_zones[count.index]}", -1, 1)}-${count.index}"
+      Name = "${var.prefix}-${var.env}-public-subnet-${"${var.availability_zones[count.index]}"}"
     },
     var.tags
   )
@@ -79,7 +79,7 @@ resource "aws_subnet" "private" {
 
   tags = merge(
     {
-      Name = "${var.prefix}-${var.env}-private-subnet-${substr("${var.availability_zones[count.index]}", -1, 1)}-${count.index}"
+      Name = "${var.prefix}-${var.env}-private-subnet-${"${var.availability_zones[count.index]}"}"
     },
     var.tags
   )
