@@ -131,7 +131,7 @@
 # # }
 
 module "vpc" {
-  source = "../modules/vpc"
+  source = "../../modules/vpc"
 
   prefix              = "myeks-vpc"
   vpc_cidr            = "10.0.0.0/16"
@@ -143,4 +143,8 @@ module "vpc" {
   enable_nat_gateway        = true
   enable_single_nat_gateway = true
 
+  tags = {
+    Terraform   = "true"
+    Environment = "test"
+  }
 }
