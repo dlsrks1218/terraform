@@ -98,25 +98,6 @@ resource "aws_route_table" "private" {
   )
 }
 
-# Route for Local Network
-resource "aws_route" "private_local" {
-  count = length(aws_subnet.private)
-
-  vpc_endpoint_id           = aws_vpc.myvpc.id
-  vpc_peering_connection_id = null
-  carrier_gateway_id        = null
-  gateway_id                = null
-  egress_only_gateway_id    = null
-  transit_gateway_id        = null
-  core_network_arn          = null
-  local_gateway_id          = null
-  nat_gateway_id            = null
-  network_interface_id      = null
-
-  route_table_id         = aws_route_table.private[count.index].id
-  destination_cidr_block = var.vpc_cidr
-}
-
 # EIP for NAT Gateway
 resource "aws_eip" "nat" {
   count = var.enable_nat_gateway ? length(aws_subnet.private) : 0
