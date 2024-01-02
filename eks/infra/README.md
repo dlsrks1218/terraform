@@ -6,11 +6,11 @@
 ## 인프라 구성 정보 
 |자원|이름|정보|
 |------|---|---|
-|VPC|myeks-VPC|IP CIDR: 192.168.0.0/16|
-|서브넷|myeks-PublicSubnet1|IP CIDR: 192.168.1.0/24, ap-northeast-2a|
-|서브넷|myeks-PublicSubnet2|IP CIDR: 192.168.2.0/24, ap-northeast-2a|
-|서브넷|myeks-PrivateSubnet1|IP CIDR: 192.168.3.0/24, ap-northeast-2a|
-|서브넷|myeks-PrivateSubnet2|IP CIDR: 192.168.4.0/24, ap-northeast-2a|
+|VPC|myeks-VPC|IP CIDR: 10.0.0.0/16|
+|서브넷|myeks-PublicSubnet1|IP CIDR: 10.0.1.0/24, ap-northeast-2a|
+|서브넷|myeks-PublicSubnet2|IP CIDR: 10.0.2.0/24, ap-northeast-2a|
+|서브넷|myeks-PrivateSubnet1|IP CIDR: 10.0.3.0/24, ap-northeast-2a|
+|서브넷|myeks-PrivateSubnet2|IP CIDR: 10.0.4.0/24, ap-northeast-2a|
 |인터넷 게이트웨이|igw|연결: myeks-VPC|
 |라우팅 테이블|myeks-PublicSubnetRT|연결: myeks-PublicSubnet1/2, 경로: 0.0.0.0/0 -> igw|
 |라우팅 테이블|myeks-PrivateSubnetRT|연결: myeks-PrivateSubnet1/2, 경로: local|
